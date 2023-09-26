@@ -7,19 +7,20 @@ def generate_credentials(token):
     home_directory = os.path.expanduser("~")
 
     # Define the path to the .terraform directory and create it if it doesn't exist
-    terraform_dir = os.path.join(home_directory, ".terraform")
+    terraform_dir = os.path.join(home_directory, ".terraform.d")
     os.makedirs(terraform_dir, exist_ok=True)
 
     # Define the path to the credentials.trfc.json file within .terraform
     credentials_file = os.path.join(terraform_dir, "credentials.trfc.json")
 
     # Create a credentials dictionary
-    trfc_credentials = { 
-        'credentials' : {
-            "token": token,
-            "credentialsVersion": 1
-            } 
-        } 
+    trfc_credentials = {
+        "credentials": {
+            "app.terraform.io": {
+                "token": token
+            }
+        }
+    }
 
     # Write the credentials to a JSON file
     with open(credentials_file, "w") as json_file:
