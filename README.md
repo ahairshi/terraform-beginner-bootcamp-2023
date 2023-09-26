@@ -276,3 +276,5 @@ Provide the following code (replace your token in the file):
   }
 }
 ``````
+
+We have automated this workaround with the following python script [bin/generate_tfrc.py](bin/generate_tfrc.py)
