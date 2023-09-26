@@ -14,14 +14,16 @@ def generate_credentials(token):
     credentials_file = os.path.join(terraform_dir, "credentials.trfc.json")
 
     # Create a credentials dictionary
-    credentials = {
-        "token": token,
-        "credentialsVersion": 1
-    }
+    trfc_credentials = { 
+        'credentials' : {
+            "token": token,
+            "credentialsVersion": 1
+            } 
+        } 
 
     # Write the credentials to a JSON file
     with open(credentials_file, "w") as json_file:
-        json.dump(credentials, json_file, indent=4)
+        json.dump(trfc_credentials, json_file, indent=4)
 
     print(f"Credentials file ({credentials_file}) has been generated successfully.")
 
