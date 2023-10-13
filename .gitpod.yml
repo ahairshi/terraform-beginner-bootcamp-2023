@@ -9,6 +9,7 @@ tasks:
       python ./bin/generate_tfrc.py
       cp $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
       cp $PROJECT_ROOT/terraformrc $PROJECT_ROOT/.terraformrc
+      source ./bin/build_provider
   - name: sinatra
     before: | 
       cd $PROJECT_ROOT

@@ -10,23 +10,23 @@ variable "teacherseat_user_uuid" {
  type = string
 }
 
-# variable "bucket_name" {
-#  type = string
-# }
-
-variable "index_html_filepath" {
-  type = string
+variable "tennis" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-variable "error_html_filepath" {
-  type = string
+variable "spotify" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-variable "content_version" {
-  type        = number
-}
-
-variable "assets_path" {
-  description = "Path to assets folder"
-  type = string
+variable "movie" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
